@@ -20,8 +20,20 @@ const onSignUp = (event) => {
   }
 }
 
+const onSignIn = (event) => {
+  event.preventDefault()
+  console.log('onSignIn invoked')
+  const data = getFormFields(event.target)
+  console.log('Target data on sign in is', event.target)
+  console.log('Store data before API call is', store.data)
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
+
 const addHandlers = () => {
   $('#signUpForm').on('submit', onSignUp)
+  $('#signInForm').on('submit', onSignIn)
 }
 
 module.exports = {

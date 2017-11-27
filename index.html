@@ -75,6 +75,157 @@
                  </div>
                </div>
                <!-- Modal for sign up success message end -->
+               <!-- Modal for sign in start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" id="signInButton">
+                  Sign In
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="signInForm">
+                        <input type="text" name="credentials[email]" placeholder="Enter your email">
+                        <input type="password" name="credentials[password]" placeholder="Enter password">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign in end -->
+
+              <!--Modal for sign in message-->
+              <div class="modal fade" id="signInMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="signInMessage">Sign in successful!</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign in success end -->
+
+              <!-- Modal for change pw start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" id="changePasswordButton" data-target="#changePasswordModal">
+                  Change Password
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Change Password</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="changePasswordForm">
+                        <input type="password" name="passwords[old]" placeholder="Old Password">
+                        <input type="password" name="passwords[new]" placeholder="New Password">
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for change pw end -->
+
+              <!--Modal for change pw message-->
+              <div class="modal fade" id="changePasswordMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="changePasswordMessage">All set! Your password has been updated</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for change pw message end -->
+
+              <!-- Modal for sign out start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" id="signOutButton" data-target="#signOutModal">
+                  Sign Out
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Sign Out</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="signOutForm">
+                        <h3>Are you sure you want to sign out?</h3>
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign out end -->
+
+              <!--Modal for sign out message-->
+              <div class="modal fade" id="signOutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="signOutMessage">You have been signed out successfully</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign out message end -->
              </div>
            </div>
       </div>
