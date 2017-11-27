@@ -49,6 +49,18 @@ const editPlayerFailure = (error) => {
   $('#editPlayersMessageModal').modal('show')
 }
 
+const deletePlayerSuccess = (data) => {
+  console.log('deletePlayerSuccess invoked. Data is', data)
+  $('#deletePlayerMessageModal').modal('show')
+}
+
+const deletePlayerFailure = (error) => {
+  console.log('Delete player failure. Error is', error)
+  $('#deletePlayerMessageTitle').text('Oops! There was an error')
+  $('#deletePlayerMessageBody').text('Please try again later')
+  $('#deletePlayerMessageModal').modal('show')
+}
+
 const clearPlayers = () => {
   $('#playerlist').empty()
 }
@@ -59,5 +71,8 @@ module.exports = {
   getPlayersSuccess,
   getPlayersFailure,
   editPlayerSuccess,
-  editPlayerFailure
+  editPlayerFailure,
+  deletePlayerSuccess,
+  deletePlayerFailure,
+  clearPlayers
 }

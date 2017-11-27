@@ -41,8 +41,21 @@ const editPlayer = (data) => {
   })
 }
 
+const deletePlayer = (data) => {
+  console.log('deletePlayer in API invoked')
+  console.log('Data being passed is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/players/' + data.player.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addPlayer,
   getPlayers,
-  editPlayer
+  editPlayer,
+  deletePlayer
 }

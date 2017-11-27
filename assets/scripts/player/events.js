@@ -33,10 +33,23 @@ const getPlayers = (event) => {
     .catch(ui.getPlayersFailure)
 }
 
+const deletePlayer = (event) => {
+  console.log('Delete player event invoked')
+  event.preventDefault()
+  console.log('Target is', event.target)
+  const data = getFormFields(event.target)
+  const modalName = '#deletePlayerModal' + data.player.id
+  api.deletePlayer(data)
+    .then($(modalName).modal('hide').on('hidden.bs.modal', ui.clearPlayers))
+    .then(ui.deletePlayerSuccess)
+    .catch(ui.deletePlayerFailure)
+}
+
 const addHandlers = () => {
   $('#addPlayerForm').on('submit', addPlayer)
   $('#getPlayersForm').on('submit', getPlayers)
   $('#playerlist').on('submit', '.editPlayerForm', editPlayer)
+  $('#playerlist').on('submit', '.deletePlayerForm', deletePlayer)
 }
 
 module.exports = {
