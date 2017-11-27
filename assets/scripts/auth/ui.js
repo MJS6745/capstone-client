@@ -3,7 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = (data) => {
-  // console.log('signUpSuccess invoked. Data is', data)
+  console.log('signUpSuccess invoked. Data is', data)
   $('#signUpModal').modal('hide')
   document.getElementById('signUpForm').reset()
   $('#signUpMessage').text('Sign up successful!')
@@ -40,9 +40,55 @@ const signInFailure = (error) => {
   $('#signInMessageModal').modal('show')
 }
 
+const changePasswordSuccess = (data) => {
+  // console.log('changePasswordSuccess invoked. Data is ', data)
+  $('#changePasswordModal').modal('hide')
+  document.getElementById('changePasswordForm').reset()
+  $('#changePasswordMessage').text('All set! Your password has been updated')
+  $('#changePasswordMessageModal').modal('show')
+}
+
+const changePasswordFailure = (error) => {
+  console.log('changePasswordFailure invoked. Error is', error)
+  $('#changePasswordModal').modal('hide')
+  document.getElementById('changePasswordForm').reset()
+  $('#changePasswordMessage').text('Oops! There was an error')
+  $('#changePasswordMessageModal').modal('show')
+}
+
+const signOutSuccess = () => {
+  console.log('signOutSuccess invoked')
+  console.log('Store data before clear is', store.user)
+  store.user = null
+  console.log('Store data after clear is', store.user)
+  $('#signOutModal').modal('hide')
+  $('#signOutMessage').text('You have been signed out successfully')
+  $('#signOutMessageModal').modal('show')
+  $('#changePasswordButton').hide()
+  $('#signOutButton').hide()
+  $('#addWorkoutButton').hide()
+  $('#getWorkoutsButton').hide()
+  $('#analyzeWorkoutsButton').hide()
+  $('#workoutlist').empty()
+  $('#signUpButton').show()
+  $('#signInButton').show()
+}
+
+const signOutFailure = (error) => {
+  console.log('signOutFailure invoked')
+  console.log('Error is', error)
+  $('#signOutModal').modal('hide')
+  $('#signOutMessage').text('Oops! There was an error')
+  $('#signOutMessageModal').modal('show')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
