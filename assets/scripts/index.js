@@ -4,9 +4,21 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events')
 const playerEvents = require('./player/events')
+const footdataApi = require('./footdata/api')
+const footdataUi = require('./footdata/ui')
+
+// Function to call the 3rd party API for league standings info
+// Function needs to be called when application initially loads so it is
+// housed here
+const getStandings = () => {
+  footdataApi.getStandings()
+    .then(footdataUi.getStandingsSuccess)
+    .catch(footdataUi.getStandingsFailure)
+}
 
 $(() => {
   setAPIOrigin(location, config)
+  getStandings()
 })
 
 $(() => {
