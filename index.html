@@ -226,6 +226,82 @@
                 </div>
               </div>
               <!-- Modal for sign out message end -->
+
+              <!-- Modal for add Player start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" id="addPlayerButton" data-target="#addPlayerModal">
+                  Add Player
+                </button>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="addPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Add a Player</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="addPlayerForm">
+                        <div class="form-group">
+                          <label for="name-input">Name</label>
+                          <input class="form-control" type="text" name="player[name]" id="name-input" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="jersey-number-input">Jersey Number</label>
+                          <input class="form-control" type="number" min="0" max="99" name="player[jersey_number]" id="jersey-number-input" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="team-input">Club</label>
+                          <select class="form-control" name="player[team]" id="team-input" required>
+                            <option>Arsenal</option>
+                            <option>Chelsea</option>
+                            <option>Manchester City</option>
+                            <option>Manchester United</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="position-input">Position</label>
+                          <select class="form-control" name="player[position]" id="position-input" required>
+                            <option>Goalkeeper</option>
+                            <option>Defense</option>
+                            <option>Midfield</option>
+                            <option>Striker</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Player</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for player end -->
+              <!--Modal for add player message start -->
+              <div class="modal fade" id="addPlayerMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="addPlayerMessage">Player successfully added</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="addPlayerMessageBody">Please click "Get My Players" for an updated list of players
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Modal for add player message end -->
+              <!-- Modal for add Player end -->
              </div>
            </div>
       </div>
