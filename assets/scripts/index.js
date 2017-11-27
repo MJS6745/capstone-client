@@ -18,7 +18,8 @@ const getStandings = () => {
 
 $(() => {
   setAPIOrigin(location, config)
-  getStandings()
+  // BE SURE TO uncomment this before going live as it is needed to get the league standings info
+  // getStandings()
 })
 
 $(() => {

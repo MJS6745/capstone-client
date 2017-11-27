@@ -1,0 +1,13 @@
+{{#each clubs as |team|}}
+<tr>
+  <td>{{team.position}} <img src="{{team.crestURI}}" width="24" height="24"> {{team.teamName}}</td>
+  <td>{{team.playedGames}}</td>
+  <td>{{team.wins}}</td>
+  <td>{{team.draws}}</td>
+  <td>{{team.losses}}</td>
+  <td>{{team.goals}}</td>
+  <td>{{team.goalsAgainst}}</td>
+  <td>{{team.goalDifference}}</td>
+  <td>{{team.points}}</td>
+</tr>
+{{/each}}
