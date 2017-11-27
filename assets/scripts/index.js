@@ -12,6 +12,8 @@ $(() => {
 $(() => {
   $('#changePasswordButton').hide()
   $('#signOutButton').hide()
+  $('#addPlayerButton').hide()
+  $('#getPlayersButton').hide()
   authEvents.addHandlers()
   playerEvents.addHandlers()
 })

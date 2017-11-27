@@ -17,6 +17,18 @@ const addPlayer = (data) => {
   })
 }
 
+const getPlayers = () => {
+  console.log('getPlayers in API invoked')
+  return $.ajax({
+    url: config.apiOrigin + '/players',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  addPlayer
+  addPlayer,
+  getPlayers
 }

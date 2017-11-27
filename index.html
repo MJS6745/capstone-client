@@ -256,21 +256,11 @@
                         </div>
                         <div class="form-group">
                           <label for="team-input">Club</label>
-                          <select class="form-control" name="player[team]" id="team-input" required>
-                            <option>Arsenal</option>
-                            <option>Chelsea</option>
-                            <option>Manchester City</option>
-                            <option>Manchester United</option>
-                          </select>
+                          <input class="form-control" type="text" name="player[team]" id="team-input" required>
                         </div>
                         <div class="form-group">
                           <label for="position-input">Position</label>
-                          <select class="form-control" name="player[position]" id="position-input" required>
-                            <option>Goalkeeper</option>
-                            <option>Defense</option>
-                            <option>Midfield</option>
-                            <option>Striker</option>
-                          </select>
+                          <input class="form-control" type="text" name="player[position]" id="position-input" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Add Player</button>
                       </form>
@@ -302,6 +292,55 @@
               </div>
               <!--Modal for add player message end -->
               <!-- Modal for add Player end -->
+
+              <!-- Modal for get players start -->
+              <!-- Button start -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" id="getPlayersButton" data-target="#getPlayersModal">
+                  Get My Players
+                </button>
+              </div>
+              <!-- Button end -->
+              <!-- Modal start -->
+              <div class="modal fade" id="getPlayersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to view your players?</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="getPlayersForm">
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal End -->
+              <!-- Modal for get players message start -->
+              <div class="modal fade" id="getPlayersMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="getPlayersMessage">Oops! There was an error</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for get players message start -->
+              <!-- Modal for get players end -->
              </div>
            </div>
       </div>

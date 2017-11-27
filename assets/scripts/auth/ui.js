@@ -28,6 +28,8 @@ const signInSuccess = (data) => {
   $('#signInMessageModal').modal('show')
   $('#changePasswordButton').show()
   $('#signOutButton').show()
+  $('#addPlayerButton').show()
+  $('#getPlayersButton').show()
   $('#signUpButton').hide()
   $('#signInButton').hide()
 }
@@ -41,7 +43,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
-  // console.log('changePasswordSuccess invoked. Data is ', data)
+  console.log('changePasswordSuccess invoked. Data is ', data)
   $('#changePasswordModal').modal('hide')
   document.getElementById('changePasswordForm').reset()
   $('#changePasswordMessage').text('All set! Your password has been updated')
@@ -66,10 +68,9 @@ const signOutSuccess = () => {
   $('#signOutMessageModal').modal('show')
   $('#changePasswordButton').hide()
   $('#signOutButton').hide()
-  $('#addWorkoutButton').hide()
-  $('#getWorkoutsButton').hide()
-  $('#analyzeWorkoutsButton').hide()
-  $('#workoutlist').empty()
+  $('#addPlayerButton').hide()
+  $('#getPlayersButton').hide()
+  $('#playerlist').empty()
   $('#signUpButton').show()
   $('#signInButton').show()
 }
