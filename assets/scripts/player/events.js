@@ -5,6 +5,15 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
+const editPlayer = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('Edit player form data is ', data)
+  api.editPlayer(data)
+    .then(ui.editPlayerSuccess)
+    .catch(ui.editPlayerFailure)
+}
+
 const addPlayer = (event) => {
   console.log('addPlayer event invoked')
   event.preventDefault()
@@ -27,6 +36,7 @@ const getPlayers = (event) => {
 const addHandlers = () => {
   $('#addPlayerForm').on('submit', addPlayer)
   $('#getPlayersForm').on('submit', getPlayers)
+  $('#playerlist').on('submit', '.editPlayerForm', editPlayer)
 }
 
 module.exports = {

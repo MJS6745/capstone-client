@@ -28,7 +28,21 @@ const getPlayers = () => {
   })
 }
 
+const editPlayer = (data) => {
+  console.log('updatePlayer in API invoked')
+  console.log('Data being passed is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/players/' + data.player.id,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addPlayer,
-  getPlayers
+  getPlayers,
+  editPlayer
 }

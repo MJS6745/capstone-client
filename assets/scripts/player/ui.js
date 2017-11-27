@@ -35,9 +35,29 @@ const getPlayersFailure = (error) => {
   $('#getPlayersMessageModal').modal('show')
 }
 
+const editPlayerSuccess = (data) => {
+  console.log('editPlayerSuccess invoked. Data is', data)
+  const modalName = '#editPlayerModal' + data.player.id
+  $(modalName).modal('hide').on('hidden.bs.modal', clearPlayers)
+  $('#editPlayersMessageModal').modal('show')
+}
+
+const editPlayerFailure = (error) => {
+  console.log('Edit player failure. Error is', error)
+  $('#editPlayersMessageTitle').text('Oops! There was an error')
+  $('#editPlayersMessageBody').text('Please try again later')
+  $('#editPlayersMessageModal').modal('show')
+}
+
+const clearPlayers = () => {
+  $('#playerlist').empty()
+}
+
 module.exports = {
   addPlayerSuccess,
   addPlayerFailure,
   getPlayersSuccess,
-  getPlayersFailure
+  getPlayersFailure,
+  editPlayerSuccess,
+  editPlayerFailure
 }
