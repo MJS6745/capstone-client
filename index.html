@@ -12,14 +12,73 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <div class="jumbotron">
+        <h1>My Premier League</h1>
+        <p>Kepp track of your favorite players, get info on different clubs, and view the league standings!</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 panel panel-default pre-scrollable">
+          <div class="panel-body container" id="playerlist">
+            <!-- Start of container for playerlist -->
+            <!-- End of container for playerlist -->
+          </div>
+        </div>
+        <div class="col-sm-4 panel panel-default">
+            <div class="panel-body">
+              <!-- Modal for sign up start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
+                Sign Up
+                </button>
+              </div>
+              <!-- End button -->
+              <!-- Modal for sign up start -->
+               <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h3 class="modal-title" id="exampleModalLabel">Sign Up</h3>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                       <form class="" id="signUpForm">
+                         <input type="text" name="credentials[email]" placeholder="Enter your email">
+                         <input type="password" name="credentials[password]" placeholder="Enter password">
+                         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                       </form>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <!-- Modal for sign up end -->
+               <!--Modal for sign up success message-->
+               <div class="modal fade" id="signUpMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h3 class="modal-title" id="signUpMessage">All set! You signed up successfully</h3>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <!-- Modal for sign up success message end -->
+             </div>
+           </div>
+      </div>
+      <!-- Sign up modal start -->
+       <!-- Sign up modal end -->
     </body>
 </html>
