@@ -1,6 +1,7 @@
 'use strict'
 
 const standingsTemplate = require('../templates/standings.handlebars')
+const playerListTemplate = require('../templates/playersearch.handlebars')
 
 const getStandingsSuccess = (data) => {
   console.log('Get standings success invoked. Data is', data)
@@ -28,10 +29,17 @@ const assignTeamId = (team) => {
 
 const getPlayerSuccess = (data) => {
   console.log('getPlayerSuccess invoked. Data is', data)
+  clearSearch()
+  const searchHtml = playerListTemplate({ players: data.players })
+  $('#search-results').append(searchHtml)
 }
 
 const getPlayerFailure = (error) => {
   console.log('getPlayerFailure. Error is', error)
+}
+
+const clearSearch = () => {
+  $('#search-results').empty()
 }
 
 module.exports = {

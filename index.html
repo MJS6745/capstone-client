@@ -387,7 +387,7 @@
       <div class="row">
         <!-- League standings area -->
           <div class="col-sm-8">
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="standings-box">
               <h4>Premier League Standings</h4>
               <div id="league-standings-body">
                 <table class="table" id="league-standings-table">
@@ -412,8 +412,9 @@
           </div>
           <!-- End league standings area -->
           <!-- Player search area -->
-          <div class="col-sm-4">
-            <div class="panel panel-default">
+          <div class="col-sm-4 panel panel-default pre-scrollable" id="player-search-box">
+            <!-- <div class="panel panel-default" id="player-search-box"> -->
+            <div class="panel-body container">
               <h4>Player Search</h4>
               <form id="player-search-form">
                 <div class="form-group">
@@ -425,6 +426,10 @@
                   </select>
                 </div>
                 <button type="submit" class="btn btn-primary">View Players</button>
+              </form>
+              <div class="panel-body container" id="search-results">
+                <!-- Area for search results -->
+              </div>
             </div>
           </div>
           <!-- End player search area -->

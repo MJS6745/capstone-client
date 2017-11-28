@@ -29,7 +29,7 @@ const getPlayersSuccess = (data) => {
     data.players[i].teamlogo = assignLogo(data.players[i].team)
   }
   const showPlayersHtml = showPlayersTemplate({ players: data.players })
-  console.log('Show player html is', showPlayersHtml)
+  // console.log('Show player html is', showPlayersHtml)
   $('#playerlist').append(showPlayersHtml)
 }
 
