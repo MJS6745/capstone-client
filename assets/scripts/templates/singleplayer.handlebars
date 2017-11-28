@@ -1,0 +1,92 @@
+<!-- Start player card style -->
+<!-- <section> -->
+  <!-- <div class="container py-3"> -->
+    <div class="card">
+      <div class="row playercard">
+        <div class="col-sm-3">
+            <img src="{{player.teamlogo}}" class="team-logo">
+          </div>
+          <div class="col-sm-5">
+            <div class="card-block">
+              <h4 class="card-title">{{player.name}}</h4>
+              <ul>
+                <li>Number: {{player.jersey_number}}</li>
+                <li>Club: {{player.team}}</li>
+                <li>Position: {{player.position}}</li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPlayerModal{{player.id}}" data-resourceid="{{player.id}}">Edit Player</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deletePlayerModal{{player.id}}" data-resourceid="{{player.id}}">Delete Player</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+<!-- </section> -->
+<!-- End player card style -->
+  <!-- Edit modal start -->
+  <div class="modal fade" id="editPlayerModal{{player.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Edit My Player</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="editPlayerForm">
+            <input type="hidden" name=player[id] value="{{player.id}}">
+            <div class="form-group">
+              <label for="name-input">Name</label>
+              <input class="form-control" type="text" name="player[name]" value="{{player.name}}" id="name-input" required>
+            </div>
+            <div class="form-group">
+              <label for="jersey-number-input">Jersey Number</label>
+              <input class="form-control" type="number" min="0" max="99" name="player[jersey_number]" value="{{player.jersey_number}}" id="jersey-number-input" required>
+            </div>
+            <div class="form-group">
+              <label for="team-input">Club</label>
+              <input class="form-control" type="text" name="player[team]" value="{{player.team}}" id="team-input" required>
+            </div>
+            <div class="form-group">
+              <label for="position-input">Position</label>
+              <input class="form-control" type="text" name="player[position]" value="{{player.position}}" id="position-input" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit modal end -->
+
+  <!-- Delete confirmation modal start -->
+  <div class="modal fade" id="deletePlayerModal{{player.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to delete {{player.name}} from your list?</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="deletePlayerForm">
+            <input type="hidden" name=player[id] value="{{player.id}}">
+            <button type="submit" class="btn btn-primary">Yes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Delete confirmation modal end -->
+  <!-- Modal for delete player end -->
+</div>

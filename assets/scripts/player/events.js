@@ -22,6 +22,12 @@ const addPlayer = (event) => {
   api.addPlayer(data)
     .then(ui.addPlayerSuccess)
     .catch(ui.addPlayerFailure)
+  // updatePlayerList()
+}
+
+const updatePlayerList = () => {
+  api.getPlayers()
+    .then(ui.updateListSuccess)
 }
 
 const getPlayers = (event) => {

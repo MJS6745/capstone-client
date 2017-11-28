@@ -4,6 +4,7 @@ const store = require('../store')
 const events = require('./events')
 // const showPlayersTemplate = require('../templates/players.handlebars')
 const showPlayersTemplate = require('../templates/playercard.handlebars')
+const singlePlayerTemplate = require('../templates/singleplayer.handlebars')
 
 const addPlayerSuccess = (data) => {
   console.log('Add player success invoked. Data is', data)
@@ -11,6 +12,10 @@ const addPlayerSuccess = (data) => {
   document.getElementById('addPlayerForm').reset()
   $('#addPlayerMessage').text('Player successfully added')
   $('#addPlayerMessageModal').modal('show')
+  data.player.teamlogo = assignLogo(data.player.team)
+  console.log('New data is', data)
+  const showPlayersHtml = singlePlayerTemplate({ player: data.player })
+  $('#playerlist').append(showPlayersHtml)
 }
 
 const addPlayerFailure = (error) => {
@@ -19,6 +24,21 @@ const addPlayerFailure = (error) => {
   document.getElementById('addPlayerForm').reset()
   $('#addPlayerMessage').text('Oops! There was an error')
   $('#addPlayerMessageModal').modal('show')
+}
+
+const updateListSuccess = (data) => {
+  console.log('Update list success invoked. Data is', data)
+  $('#playerlist').empty()
+  for (let i = 0; i < data.players.length; i++) {
+    data.players[i].teamlogo = assignLogo(data.players[i].team)
+  }
+  const showPlayersHtml = showPlayersTemplate({ players: data.players })
+  // console.log('Show player html is', showPlayersHtml)
+  if (data.players.length === 0) {
+    $('#playerlist').append('<p>No players available. Click "Add player" to add a player to your list.</p>')
+  } else {
+    $('#playerlist').append(showPlayersHtml)
+  }
 }
 
 const getPlayersSuccess = (data) => {
@@ -130,5 +150,6 @@ module.exports = {
   editPlayerFailure,
   deletePlayerSuccess,
   deletePlayerFailure,
-  clearPlayers
+  clearPlayers,
+  updateListSuccess
 }
