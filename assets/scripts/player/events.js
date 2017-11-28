@@ -11,6 +11,8 @@ const editPlayer = (event) => {
   console.log('Edit player form data is ', data)
   api.editPlayer(data)
     .then(ui.editPlayerSuccess)
+    // New code for updating list of players
+    .then($('#editPlayersMessageModal').on('hidden.bs.modal', updatePlayerList))
     .catch(ui.editPlayerFailure)
 }
 
