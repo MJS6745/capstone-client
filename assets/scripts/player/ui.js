@@ -12,6 +12,7 @@ const addPlayerSuccess = (data) => {
   document.getElementById('addPlayerForm').reset()
   $('#addPlayerMessage').text('Player successfully added')
   $('#addPlayerMessageModal').modal('show')
+  // Functionality below was added to update the list of players when new player is added
   data.player.teamlogo = assignLogo(data.player.team)
   console.log('New data is', data)
   const showPlayersHtml = singlePlayerTemplate({ player: data.player })

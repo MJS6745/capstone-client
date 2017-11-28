@@ -22,7 +22,6 @@ const addPlayer = (event) => {
   api.addPlayer(data)
     .then(ui.addPlayerSuccess)
     .catch(ui.addPlayerFailure)
-  // updatePlayerList()
 }
 
 const updatePlayerList = () => {
@@ -48,6 +47,8 @@ const deletePlayer = (event) => {
   api.deletePlayer(data)
     .then($(modalName).modal('hide').on('hidden.bs.modal', ui.clearPlayers))
     .then(ui.deletePlayerSuccess)
+    // New code for updating list of players
+    .then($('#deletePlayerMessageModal').on('hidden.bs.modal', updatePlayerList))
     .catch(ui.deletePlayerFailure)
 }
 
