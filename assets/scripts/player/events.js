@@ -26,6 +26,16 @@ const addPlayer = (event) => {
     .catch(ui.addPlayerFailure)
 }
 
+const addSearchPlayer = (event) => {
+  console.log('addSearchPlayer event invoked')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('Target data is ', data)
+  api.addPlayer(data)
+    .then(ui.addSearchPlayerSuccess)
+    .catch(ui.addSearchPlayerFailure)
+}
+
 const updatePlayerList = () => {
   api.getPlayers()
     .then(ui.updateListSuccess)
@@ -56,6 +66,9 @@ const deletePlayer = (event) => {
 
 const addHandlers = () => {
   $('#addPlayerForm').on('submit', addPlayer)
+  // New code for adding player from search results
+  // $('#addPlayerSearchForm').on('submit', addPlayer)
+  $('#search-results').on('submit', '.addPlayerSearchForm', addSearchPlayer)
   $('#getPlayersForm').on('submit', getPlayers)
   $('#playerlist').on('submit', '.editPlayerForm', editPlayer)
   $('#playerlist').on('submit', '.deletePlayerForm', deletePlayer)

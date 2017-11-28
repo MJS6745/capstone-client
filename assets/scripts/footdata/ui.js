@@ -41,8 +41,8 @@ const getPlayerSuccess = (data) => {
 const setTeamName = (data) => {
   // Need to check the ID at the end of the URL for self and assign the team name based on that
   const teamUrl = data._links.team.href
-  console.log('teamUrl is', teamUrl)
-  console.log(typeof teamUrl)
+  // console.log('teamUrl is', teamUrl)
+  // console.log(typeof teamUrl)
   if (teamUrl.search('57') !== -1) {
     return 'Arsenal'
   } else if (teamUrl.search('1044') !== -1) {

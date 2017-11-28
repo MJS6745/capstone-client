@@ -27,6 +27,22 @@ const addPlayerFailure = (error) => {
   $('#addPlayerMessageModal').modal('show')
 }
 
+const addSearchPlayerSuccess = (data) => {
+  console.log('Search player success invoked. Data is', data)
+  const modalName = '#addSearchPlayerModal' + data.player.jersey_number
+  $(modalName).modal('hide')
+  $('#addPlayerMessage').text('Player successfully added')
+  $('#addPlayerMessageModal').modal('show')
+  data.player.teamlogo = assignLogo(data.player.team)
+  console.log('New data is', data)
+  const showPlayersHtml = singlePlayerTemplate({ player: data.player })
+  $('#playerlist').append(showPlayersHtml)
+}
+
+const addSearchPlayerFailure = (error) => {
+  console.log('addSearchPlayerFailure, error is', error)
+}
+
 const updateListSuccess = (data) => {
   console.log('Update list success invoked. Data is', data)
   $('#playerlist').empty()
@@ -152,5 +168,7 @@ module.exports = {
   deletePlayerSuccess,
   deletePlayerFailure,
   clearPlayers,
-  updateListSuccess
+  updateListSuccess,
+  addSearchPlayerSuccess,
+  addSearchPlayerFailure
 }
