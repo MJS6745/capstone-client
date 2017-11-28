@@ -170,5 +170,6 @@ module.exports = {
   clearPlayers,
   updateListSuccess,
   addSearchPlayerSuccess,
-  addSearchPlayerFailure
+  addSearchPlayerFailure,
+  assignLogo
 }

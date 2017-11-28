@@ -2,6 +2,7 @@
 
 const standingsTemplate = require('../templates/standings.handlebars')
 const playerListTemplate = require('../templates/playersearch.handlebars')
+const playerUi = require('../player/ui')
 
 const getStandingsSuccess = (data) => {
   console.log('Get standings success invoked. Data is', data)
@@ -33,6 +34,7 @@ const getPlayerSuccess = (data) => {
   for (let i = 0; i < data.players.length; i++) {
     data.players[i].age = getAge(data.players[i].dateOfBirth)
     data.players[i].cleanTeamName = setTeamName(data)
+    data.players[i].teamlogo = playerUi.assignLogo(setTeamName(data))
   }
   const searchHtml = playerListTemplate({ players: data.players })
   $('#search-results').append(searchHtml)
