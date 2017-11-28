@@ -38,6 +38,8 @@ const getPlayerSuccess = (data) => {
 }
 
 const getPlayerFailure = (error) => {
+  clearSearch()
+  $('#search-results').append('<p>Player data unavailable. Please try again later.</p>')
   console.log('getPlayerFailure. Error is', error)
 }
 
