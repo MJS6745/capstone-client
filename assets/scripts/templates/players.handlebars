@@ -10,7 +10,7 @@
   </div>
   <!-- Button for edit modal start -->
   <div class="col-sm-4 playerinfobutton">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPlayerModal{{player.id}}" data-resourceid="{{player.id}}">Edit Player</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editPlayerModal{{player.id}}" data-resourceid="{{player.id}}">Edit Player</button>
   </div>
   <!-- Button for edit modal end -->
   <!-- Edit modal start -->
@@ -42,7 +42,7 @@
               <label for="position-input">Position</label>
               <input class="form-control" type="text" name="player[position]" value="{{player.position}}" id="position-input" required>
             </div>
-            <button type="submit" class="btn btn-primary">Confirm Changes</button>
+            <button type="submit" class="btn btn-info">Confirm Changes</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -55,7 +55,7 @@
   <!-- Modal for delete player start -->
   <!-- Button start -->
   <div class="col-sm-4 playerinfobutton">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deletePlayerModal{{player.id}}" data-resourceid="{{player.id}}">Delete Player</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#deletePlayerModal{{player.id}}" data-resourceid="{{player.id}}">Delete Player</button>
   </div>
   <!-- Button end -->
   <!-- Delete confirmation modal start -->
@@ -71,7 +71,7 @@
         <div class="modal-body">
           <form class="deletePlayerForm">
             <input type="hidden" name=player[id] value="{{player.id}}">
-            <button type="submit" class="btn btn-primary">Yes</button>
+            <button type="submit" class="btn btn-info">Yes</button>
           </form>
         </div>
         <div class="modal-footer">

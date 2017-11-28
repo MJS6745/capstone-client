@@ -2,7 +2,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: #dcdee2;
+  background-color: #949999;
+  font-family: 'Muli', sans-serif;
 }
 
 #jumbo {
@@ -20,12 +21,15 @@ body {
 }
 
 .team-logo {
-  width: 212px;
-  height: 200px;
+  // width: 212px;
+  // height: 200px;
+  width: 150px;
+  height: 140px;
 }
 
 .playercard {
     padding: 20px;
+    width: 350px;
 }
 
 #playerlist {

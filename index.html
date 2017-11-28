@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     </head>
     <body class="container-fluid">
       <div class="jumbotron vertical-center" id="jumbo">
@@ -19,20 +20,24 @@
         <p>Keep track of your favorite players, get info on different clubs, and view the league standings!</p>
       </div>
       <div class="row">
-        <div class="col-sm-8 panel panel-default pre-scrollable">
-          <div class="panel-body container" id="playerlist">
+        <!-- <div class="col-sm-8 panel panel-default pre-scrollable"> -->
+        <div class="col-sm-8">
+          <!-- <div class="panel-body container" id="playerlist"> -->
+          <div class="panel panel-default pre-scrollable panel-body" id="playerlist">
             <!-- Start of container for playerlist -->
             <p>Click "Get My Players" to see a complete list of all your favorite players.</p>
             <p>Note that a user must be logged in before they can access their list or add players</p>
             <!-- End of container for playerlist -->
           </div>
         </div>
-        <div class="col-sm-4 panel panel-default">
-            <div class="panel-body">
+        <!-- <div class="col-sm-4 panel panel-default"> -->
+        <div class="col-sm-4">
+            <!-- <div class="panel-body"> -->
+            <div class="panel panel-default">
               <!-- Modal for sign up start -->
               <!-- Button -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
                 Sign Up
                 </button>
               </div>
@@ -52,7 +57,7 @@
                          <input type="text" name="credentials[email]" placeholder="Enter your email">
                          <input type="password" name="credentials[password]" placeholder="Enter password">
                          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
-                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                         <button type="submit" class="btn btn-info">Sign Up</button>
                        </form>
                      </div>
                      <div class="modal-footer">
@@ -82,7 +87,7 @@
                <!-- Modal for sign in start -->
               <!-- Button -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" id="signInButton">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#signInModal" id="signInButton">
                   Sign In
                 </button>
               </div>
@@ -101,7 +106,7 @@
                       <form class="" id="signInForm">
                         <input type="text" name="credentials[email]" placeholder="Enter your email">
                         <input type="password" name="credentials[password]" placeholder="Enter password">
-                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <button type="submit" class="btn btn-info">Sign In</button>
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -133,7 +138,7 @@
               <!-- Modal for change pw start -->
               <!-- Button -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" id="changePasswordButton" data-target="#changePasswordModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="changePasswordButton" data-target="#changePasswordModal">
                   Change Password
                 </button>
               </div>
@@ -152,7 +157,7 @@
                       <form class="" id="changePasswordForm">
                         <input type="password" name="passwords[old]" placeholder="Old Password">
                         <input type="password" name="passwords[new]" placeholder="New Password">
-                        <button type="submit" class="btn btn-primary">Change Password</button>
+                        <button type="submit" class="btn btn-info">Change Password</button>
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -184,7 +189,7 @@
               <!-- Modal for sign out start -->
               <!-- Button -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" id="signOutButton" data-target="#signOutModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="signOutButton" data-target="#signOutModal">
                   Sign Out
                 </button>
               </div>
@@ -202,7 +207,7 @@
                     <div class="modal-body">
                       <form class="" id="signOutForm">
                         <h3>Are you sure you want to sign out?</h3>
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="submit" class="btn btn-info">Yes</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                       </form>
                     </div>
@@ -234,7 +239,7 @@
               <!-- Modal for add Player start -->
               <!-- Button -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" id="addPlayerButton" data-target="#addPlayerModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="addPlayerButton" data-target="#addPlayerModal">
                   Add Player
                 </button>
               </div>
@@ -266,7 +271,7 @@
                           <label for="position-input">Position</label>
                           <input class="form-control" type="text" name="player[position]" id="position-input" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Player</button>
+                        <button type="submit" class="btn btn-info">Add Player</button>
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -300,7 +305,7 @@
               <!-- Modal for get players start -->
               <!-- Button start -->
               <div class="playerinfobutton">
-                <button type="button" class="btn btn-primary" data-toggle="modal" id="getPlayersButton" data-target="#getPlayersModal">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="getPlayersButton" data-target="#getPlayersModal">
                   Get My Players
                 </button>
               </div>
@@ -317,7 +322,7 @@
                     </div>
                     <div class="modal-body">
                       <form class="" id="getPlayersForm">
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="submit" class="btn btn-info">Yes</button>
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -392,7 +397,7 @@
         <!-- League standings area -->
           <div class="col-sm-8">
             <div class="panel panel-default" id="standings-box">
-              <h4>Premier League Standings</h4>
+              <h4>&nbsp;&nbsp;Premier League Standings</h4>
               <div id="league-standings-body">
                 <table class="table" id="league-standings-table">
                   <thead>
@@ -446,7 +451,7 @@
                     <option value="563">West Ham</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-primary">View Players</button>
+                <button type="submit" class="btn btn-info">View Players</button>
               </form>
               <div class="panel-body container" id="search-results">
                 <!-- Area for search results -->

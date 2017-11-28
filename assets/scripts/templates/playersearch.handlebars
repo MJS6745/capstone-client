@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
 {{#each players as |player|}}
 <h4>{{player.name}}</h4>
 <li>Age: {{player.age}}</li>
@@ -6,4 +6,18 @@
 <li>Number: {{player.jerseyNumber}}</li>
 <li>National Squad: {{player.nationality}}</li>
 {{/each}}
-</ul>
+</ul> -->
+
+{{#each players as |player|}}
+<div class="card w-30">
+  <div class="card-block">
+    <h3 class="card-title">{{player.name}}</h3>
+    <ul class="list-group playercard">
+      <li class="list-group-item">Age: {{player.age}}</li>
+      <li class="list-group-item">Position: {{player.position}}</li>
+      <li class="list-group-item">Number: {{player.jerseyNumber}}</li>
+      <li class="list-group-item">National Squad: {{player.nationality}}</li>
+    </ul>
+  </div>
+</div>
+{{/each}}
