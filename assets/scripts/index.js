@@ -28,6 +28,7 @@ $(() => {
   $('#signOutButton').hide()
   $('#addPlayerButton').hide()
   $('#getPlayersButton').hide()
+  $('#searchPlayerButton').hide()
   authEvents.addHandlers()
   playerEvents.addHandlers()
   footdataEvents.addHandlers()

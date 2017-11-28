@@ -30,6 +30,8 @@ const signInSuccess = (data) => {
   $('#signOutButton').show()
   $('#addPlayerButton').show()
   $('#getPlayersButton').show()
+  $('#searchPlayerButton').show()
+  $('#search-results').empty()
   $('#signUpButton').hide()
   $('#signInButton').hide()
 }
@@ -70,7 +72,10 @@ const signOutSuccess = () => {
   $('#signOutButton').hide()
   $('#addPlayerButton').hide()
   $('#getPlayersButton').hide()
+  $('#searchPlayerButton').hide()
   $('#playerlist').empty()
+  $('#search-results').empty()
+  $('#search-results').append('<p>Please log in to search for players</p>')
   $('#signUpButton').show()
   $('#signInButton').show()
 }

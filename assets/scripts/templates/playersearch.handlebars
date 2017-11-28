@@ -12,12 +12,55 @@
 <div class="card w-30">
   <div class="card-block">
     <h3 class="card-title">{{player.name}}</h3>
-    <ul class="list-group playercard">
+    <ul class="list-group player-search-result">
       <li class="list-group-item">Age: {{player.age}}</li>
       <li class="list-group-item">Position: {{player.position}}</li>
       <li class="list-group-item">Number: {{player.jerseyNumber}}</li>
       <li class="list-group-item">National Squad: {{player.nationality}}</li>
     </ul>
+    <!-- Button for each player start -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSearchPlayerModal{{player.jerseyNumber}}" id="addSearchPlayerButton">
+      Add player
+    </button>
+    <!-- Button for each player end -->
+    <!-- Modal for each player start -->
+    <div class="modal fade" id="addSearchPlayerModal{{player.jerseyNumber}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Add a Player</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="" id="addPlayerSearchForm">
+              <div class="form-group">
+                <label for="name-input">Name</label>
+                <input class="form-control" type="text" name="player[name]" id="name-input" value="{{player.name}}" required>
+              </div>
+              <div class="form-group">
+                <label for="jersey-number-input">Jersey Number</label>
+                <input class="form-control" type="number" min="0" max="99" name="player[jersey_number]" id="jersey-number-input" value="{{player.jerseyNumber}}" required>
+              </div>
+              <div class="form-group">
+                <label for="team-input">Club</label>
+                <input class="form-control" type="text" name="player[team]" id="team-input" value="{{player.cleanTeamName}}" required>
+              </div>
+              <div class="form-group">
+                <label for="position-input">Position</label>
+                <input class="form-control" type="text" name="player[position]" value="{{player.position}}" id="position-input" required>
+              </div>
+              <button type="submit" class="btn btn-info">Add Player</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for each player end -->
   </div>
 </div>
 {{/each}}
