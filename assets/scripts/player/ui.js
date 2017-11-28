@@ -30,7 +30,11 @@ const getPlayersSuccess = (data) => {
   }
   const showPlayersHtml = showPlayersTemplate({ players: data.players })
   // console.log('Show player html is', showPlayersHtml)
-  $('#playerlist').append(showPlayersHtml)
+  if (data.players.length === 0) {
+    $('#playerlist').append('<p>No players available. Click "Add player" to add a player to your list.</p>')
+  } else {
+    $('#playerlist').append(showPlayersHtml)
+  }
 }
 
 const assignLogo = (team) => {
