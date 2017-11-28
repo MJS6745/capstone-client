@@ -16,6 +16,19 @@ const getStandings = () => {
   })
 }
 
+const getPlayerList = (data) => {
+  console.log('getPlayerList API invoked')
+  const token = '49272f6236284aee99353cc125b5a69a'
+  return $.ajax({
+    url: 'http://api.football-data.org/v1/teams/' + data.team.id + '/players',
+    method: 'GET',
+    headers: {
+      'X-Auth-Token': token
+    }
+  })
+}
+
 module.exports = {
-  getStandings
+  getStandings,
+  getPlayerList
 }

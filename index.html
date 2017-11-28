@@ -413,8 +413,18 @@
           <!-- End league standings area -->
           <!-- Player search area -->
           <div class="col-sm-4">
-            <div class="panel panel-default" id="randomworkout">
+            <div class="panel panel-default">
               <h4>Player Search</h4>
+              <form id="player-search-form">
+                <div class="form-group">
+                  <label for="team-select">Select a team</label>
+                  <select class="form-control" id="team-selection" name=team[id]>
+                    <option value="57">Arsenal</option>
+                    <option value="61">Chelsea</option>
+                    <option value="73">Tottenham</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">View Players</button>
             </div>
           </div>
           <!-- End player search area -->

@@ -6,6 +6,7 @@ const authEvents = require('./auth/events')
 const playerEvents = require('./player/events')
 const footdataApi = require('./footdata/api')
 const footdataUi = require('./footdata/ui')
+const footdataEvents = require('./footdata/events')
 
 // Function to call the 3rd party API for league standings info
 // Function needs to be called when application initially loads so it is
@@ -29,6 +30,7 @@ $(() => {
   $('#getPlayersButton').hide()
   authEvents.addHandlers()
   playerEvents.addHandlers()
+  footdataEvents.addHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file
