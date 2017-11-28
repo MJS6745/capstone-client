@@ -30,6 +30,9 @@ const getStandingsFailure = (error) => {
 const getPlayerSuccess = (data) => {
   console.log('getPlayerSuccess invoked. Data is', data)
   clearSearch()
+  for (let i = 0; i < data.players.length; i++) {
+    data.players[i].age = getAge(data.players[i].dateOfBirth)
+  }
   const searchHtml = playerListTemplate({ players: data.players })
   $('#search-results').append(searchHtml)
 }
@@ -40,6 +43,17 @@ const getPlayerFailure = (error) => {
 
 const clearSearch = () => {
   $('#search-results').empty()
+}
+
+const getAge = (dateString) => {
+  const today = new Date()
+  const birthDate = new Date(dateString)
+  let age = today.getFullYear() - birthDate.getFullYear()
+  const m = today.getMonth() - birthDate.getMonth()
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--
+  }
+  return age
 }
 
 module.exports = {
