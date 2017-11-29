@@ -8,7 +8,7 @@ const store = require('../store')
 const editPlayer = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Edit player form data is ', data)
+  // console.log('Edit player form data is ', data)
   api.editPlayer(data)
     .then(ui.editPlayerSuccess)
     // New code for updating list of players
@@ -17,20 +17,20 @@ const editPlayer = (event) => {
 }
 
 const addPlayer = (event) => {
-  console.log('addPlayer event invoked')
+  // console.log('addPlayer event invoked')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Target data is ', data)
+  // console.log('Target data is ', data)
   api.addPlayer(data)
     .then(ui.addPlayerSuccess)
     .catch(ui.addPlayerFailure)
 }
 
 const addSearchPlayer = (event) => {
-  console.log('addSearchPlayer event invoked')
+  // console.log('addSearchPlayer event invoked')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Target data is ', data)
+  // console.log('Target data is ', data)
   api.addPlayer(data)
     .then(ui.addSearchPlayerSuccess)
     .catch(ui.addSearchPlayerFailure)
@@ -42,18 +42,18 @@ const updatePlayerList = () => {
 }
 
 const getPlayers = (event) => {
-  console.log('Get players event invoked')
+  // console.log('Get players event invoked')
   event.preventDefault()
-  console.log('Target is', event.target)
+  // console.log('Target is', event.target)
   api.getPlayers()
     .then(ui.getPlayersSuccess)
     .catch(ui.getPlayersFailure)
 }
 
 const deletePlayer = (event) => {
-  console.log('Release player event invoked')
+  // console.log('Release player event invoked')
   event.preventDefault()
-  console.log('Target is', event.target)
+  // console.log('Target is', event.target)
   const data = getFormFields(event.target)
   const modalName = '#deletePlayerModal' + data.player.id
   api.deletePlayer(data)

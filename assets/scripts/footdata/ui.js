@@ -5,8 +5,8 @@ const playerListTemplate = require('../templates/playersearch.handlebars')
 const playerUi = require('../player/ui')
 
 const getStandingsSuccess = (data) => {
-  console.log('Get standings success invoked. Data is', data)
-  console.log('Standing data is', data.standing)
+  // console.log('Get standings success invoked. Data is', data)
+  // console.log('Standing data is', data.standing)
   // for (let i = 0; i < data.standing.length; i++) {
   //   data.standing[i].teamId = assignTeamId(data.standing[i].teamName)
   // }
@@ -16,7 +16,7 @@ const getStandingsSuccess = (data) => {
 }
 
 const getStandingsFailure = (error) => {
-  console.log('Error getting standings. Error is', error)
+  // console.log('Error getting standings. Error is', error)
   $('#standingstable').append('<tr><td>Standings unavailable. Please try again later</td></tr>')
 }
 
@@ -29,7 +29,7 @@ const getStandingsFailure = (error) => {
 // }
 
 const getPlayerSuccess = (data) => {
-  console.log('getPlayerSuccess invoked. Data is', data)
+  // console.log('getPlayerSuccess invoked. Data is', data)
   clearSearch()
   for (let i = 0; i < data.players.length; i++) {
     data.players[i].age = getAge(data.players[i].dateOfBirth)
@@ -93,7 +93,7 @@ const setTeamName = (data) => {
 const getPlayerFailure = (error) => {
   clearSearch()
   $('#search-results').append('<p>Player data unavailable. Please try again later.</p>')
-  console.log('getPlayerFailure. Error is', error)
+  // console.log('getPlayerFailure. Error is', error)
 }
 
 const clearSearch = () => {

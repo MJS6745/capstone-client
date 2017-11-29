@@ -6,9 +6,9 @@ const ui = require('./ui')
 
 const getTeamInfo = (event) => {
   event.preventDefault()
-  console.log('Event target is', event.target)
+  // console.log('Event target is', event.target)
   const data = getFormFields(event.target)
-  console.log('Data is', data)
+  // console.log('Data is', data)
   api.getPlayerList(data)
     .then(ui.getPlayerSuccess)
     .catch(ui.getPlayerFailure)

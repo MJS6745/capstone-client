@@ -5,8 +5,8 @@ const store = require('../store')
 const ui = require('./ui')
 
 const addPlayer = (data) => {
-  console.log('API sign player invoked')
-  console.log('Data being passed into api call is ', data)
+  // console.log('API sign player invoked')
+  // console.log('Data being passed into api call is ', data)
   return $.ajax({
     url: config.apiOrigin + '/players',
     method: 'POST',
@@ -18,7 +18,7 @@ const addPlayer = (data) => {
 }
 
 const getPlayers = () => {
-  console.log('getPlayers in API invoked')
+  // console.log('getPlayers in API invoked')
   return $.ajax({
     url: config.apiOrigin + '/players',
     method: 'GET',
@@ -29,8 +29,8 @@ const getPlayers = () => {
 }
 
 const editPlayer = (data) => {
-  console.log('updatePlayer in API invoked')
-  console.log('Data being passed is ', data)
+  // console.log('updatePlayer in API invoked')
+  // console.log('Data being passed is ', data)
   return $.ajax({
     url: config.apiOrigin + '/players/' + data.player.id,
     method: 'PATCH',
@@ -42,8 +42,8 @@ const editPlayer = (data) => {
 }
 
 const deletePlayer = (data) => {
-  console.log('deletePlayer in API invoked')
-  console.log('Data being passed is ', data)
+  // console.log('deletePlayer in API invoked')
+  // console.log('Data being passed is ', data)
   return $.ajax({
     url: config.apiOrigin + '/players/' + data.player.id,
     method: 'DELETE',

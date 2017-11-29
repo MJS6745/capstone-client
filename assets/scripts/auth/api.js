@@ -15,7 +15,7 @@ const ui = require('./ui')
 // }
 
 const signUp = (data) => {
-  console.log('Sign Up API invoked')
+  // console.log('Sign Up API invoked')
   store.onSignUpSignIn = data
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -33,7 +33,7 @@ const signUpSignIn = function (data) {
 }
 
 const signIn = (data) => {
-  console.log('Data being passed to the API is', data)
+  // console.log('Data being passed to the API is', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
