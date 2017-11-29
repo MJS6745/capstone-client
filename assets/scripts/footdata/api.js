@@ -8,7 +8,7 @@ const getStandings = () => {
   // will not be hidden in code
   const token = '49272f6236284aee99353cc125b5a69a'
   return $.ajax({
-    url: 'http://api.football-data.org/v1/competitions/445/leagueTable',
+    url: 'https://api.football-data.org/v1/competitions/445/leagueTable',
     method: 'GET',
     headers: {
       'X-Auth-Token': token
@@ -22,7 +22,7 @@ const getPlayerList = (data) => {
   // will not be hidden in code
   const token = '49272f6236284aee99353cc125b5a69a'
   return $.ajax({
-    url: 'http://api.football-data.org/v1/teams/' + data.team.id + '/players',
+    url: 'https://api.football-data.org/v1/teams/' + data.team.id + '/players',
     method: 'GET',
     headers: {
       'X-Auth-Token': token
