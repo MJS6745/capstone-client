@@ -5,12 +5,30 @@ const config = require('../config')
 const store = require('../store')
 const ui = require('./ui')
 
+// const signUp = (data) => {
+//   console.log('Sign Up API invoked')
+//   return $.ajax({
+//     url: config.apiOrigin + '/sign-up',
+//     method: 'POST',
+//     data: data
+//   })
+// }
+
 const signUp = (data) => {
   console.log('Sign Up API invoked')
+  store.onSignUpSignIn = data
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
     data: data
+  })
+}
+
+const signUpSignIn = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    data: store.onSignUpSignIn
   })
 }
 
@@ -49,5 +67,6 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  signUpSignIn
 }

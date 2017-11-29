@@ -51,7 +51,7 @@ const getPlayers = (event) => {
 }
 
 const deletePlayer = (event) => {
-  console.log('Delete player event invoked')
+  console.log('Release player event invoked')
   event.preventDefault()
   console.log('Target is', event.target)
   const data = getFormFields(event.target)

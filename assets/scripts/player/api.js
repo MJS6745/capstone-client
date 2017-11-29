@@ -5,7 +5,7 @@ const store = require('../store')
 const ui = require('./ui')
 
 const addPlayer = (data) => {
-  console.log('API add player invoked')
+  console.log('API sign player invoked')
   console.log('Data being passed into api call is ', data)
   return $.ajax({
     url: config.apiOrigin + '/players',

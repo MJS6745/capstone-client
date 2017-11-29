@@ -7,7 +7,7 @@ const showPlayersTemplate = require('../templates/playercard.handlebars')
 const singlePlayerTemplate = require('../templates/singleplayer.handlebars')
 
 const addPlayerSuccess = (data) => {
-  console.log('Add player success invoked. Data is', data)
+  console.log('Sign Player success invoked. Data is', data)
   $('#addPlayerModal').modal('hide')
   document.getElementById('addPlayerForm').reset()
   $('#addPlayerMessage').text('Player successfully added')
@@ -20,7 +20,7 @@ const addPlayerSuccess = (data) => {
 }
 
 const addPlayerFailure = (error) => {
-  console.log('Add player failure. Error is', error)
+  console.log('Sign Player failure. Error is', error)
   $('#addPlayerModal').modal('hide')
   document.getElementById('addPlayerForm').reset()
   $('#addPlayerMessage').text('Oops! There was an error')
@@ -52,7 +52,7 @@ const updateListSuccess = (data) => {
   const showPlayersHtml = showPlayersTemplate({ players: data.players })
   // console.log('Show player html is', showPlayersHtml)
   if (data.players.length === 0) {
-    $('#playerlist').append('<p>Click "Add player" to add a player to your list.</p>')
+    $('#playerlist').append('<p>Click "Sign Player" to add a player to your list.</p>')
   } else {
     $('#playerlist').append(showPlayersHtml)
   }
@@ -68,7 +68,7 @@ const getPlayersSuccess = (data) => {
   const showPlayersHtml = showPlayersTemplate({ players: data.players })
   // console.log('Show player html is', showPlayersHtml)
   if (data.players.length === 0) {
-    $('#playerlist').append('<p>Click "Add player" to add a player to your list.</p>')
+    $('#playerlist').append('<p>Click "Sign Player" to add a player to your list.</p>')
   } else {
     $('#playerlist').append(showPlayersHtml)
   }
@@ -148,7 +148,7 @@ const deletePlayerSuccess = (data) => {
 }
 
 const deletePlayerFailure = (error) => {
-  console.log('Delete player failure. Error is', error)
+  console.log('Release player failure. Error is', error)
   $('#deletePlayerMessageTitle').text('Oops! There was an error')
   $('#deletePlayerMessageBody').text('Please try again later')
   $('#deletePlayerMessageModal').modal('show')

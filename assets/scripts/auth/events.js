@@ -5,6 +5,21 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
+// const onSignUp = (event) => {
+//   event.preventDefault()
+//   console.log('onSignUp invoked')
+//   console.log('Target is', event.target)
+//   const data = getFormFields(event.target)
+//   console.log('Data is ', data)
+//   if (data.credentials.email !== '' && data.credentials.password !== '') {
+//     api.signUp(data)
+//       .then(ui.signUpSuccess)
+//       .catch(ui.signUpFailure)
+//   } else {
+//     ui.signUpFailure()
+//   }
+// }
+
 const onSignUp = (event) => {
   event.preventDefault()
   console.log('onSignUp invoked')
@@ -13,6 +28,7 @@ const onSignUp = (event) => {
   console.log('Data is ', data)
   if (data.credentials.email !== '' && data.credentials.password !== '') {
     api.signUp(data)
+      .then(api.signUpSignIn)
       .then(ui.signUpSuccess)
       .catch(ui.signUpFailure)
   } else {

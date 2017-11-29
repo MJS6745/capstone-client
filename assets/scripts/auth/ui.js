@@ -2,12 +2,30 @@
 
 const store = require('../store')
 
+// const signUpSuccess = (data) => {
+//   console.log('signUpSuccess invoked. Data is', data)
+//   $('#signUpModal').modal('hide')
+//   document.getElementById('signUpForm').reset()
+//   $('#signUpMessage').text('Sign up successful!')
+//   $('#signUpMessageModal').modal('show')
+// }
+
 const signUpSuccess = (data) => {
   console.log('signUpSuccess invoked. Data is', data)
   $('#signUpModal').modal('hide')
+  store.user = data.user
+  console.log('Store data after sign in API call is currently', store.user)
   document.getElementById('signUpForm').reset()
   $('#signUpMessage').text('Sign up successful!')
   $('#signUpMessageModal').modal('show')
+  $('#changePasswordButton').show()
+  $('#signOutButton').show()
+  $('#addPlayerButton').show()
+  $('#getPlayersButton').show()
+  $('#searchPlayerButton').show()
+  $('#search-results').empty()
+  $('#signUpButton').hide()
+  $('#signInButton').hide()
 }
 
 const signUpFailure = (error) => {
@@ -73,9 +91,10 @@ const signOutSuccess = () => {
   $('#addPlayerButton').hide()
   $('#getPlayersButton').hide()
   $('#searchPlayerButton').hide()
-  $('#playerlist').empty()
   $('#search-results').empty()
   $('#search-results').append('<p>Please log in to search for players</p>')
+  $('#playerlist').empty()
+  $('#playerlist').append('<p>Click "Get My Squad" to see a complete list of all your favorite players.</p><p>Note that a user must be logged in before they can access their list or sign players</p>')
   $('#signUpButton').show()
   $('#signInButton').show()
 }
