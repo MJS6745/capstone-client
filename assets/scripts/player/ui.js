@@ -77,29 +77,29 @@ const getPlayersSuccess = (data) => {
 const assignLogo = (team) => {
   let logo = ''
   if (team === 'Arsenal' || team === 'arsenal' || team === 'Arsenal FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg'
   } else if (team === 'Chelsea' || team === 'chelsea') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/5/5c/Chelsea_crest.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/5/5c/Chelsea_crest.svg'
   } else if (team === 'Leicester City' || team === 'leicester city') {
-    logo = 'http://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png'
+    logo = 'https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png'
   } else if (team === 'Watford' || team === 'watford' || team === 'Watford FC') {
     logo = 'https://upload.wikimedia.org/wikipedia/en/e/e2/Watford.svg'
   } else if (team === 'Liverpool' || team === 'liverpool' || team === 'Liverpool FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg'
   } else if (team === 'Southampton' || team === 'southampton' || team === 'Southampton FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/c/c9/FC_Southampton.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/c/c9/FC_Southampton.svg'
   } else if (team === 'Swansea City' || team === 'swansea city' || team === 'Swansea City FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/a/ab/Swansea_City_Logo.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/a/ab/Swansea_City_Logo.svg'
   } else if (team === 'West Bromwich Albion' || team === 'west brom' || team === 'West Brom') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/8/8b/West_Bromwich_Albion.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/8/8b/West_Bromwich_Albion.svg'
   } else if (team === 'Bournemouth' || team === 'bournemouth' || team === 'AFC Bournemouth') {
     logo = 'https://upload.wikimedia.org/wikipedia/de/4/41/Afc_bournemouth.svg'
   } else if (team === 'Everton' || team === 'everton' || team === 'Everton FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/f/f9/Everton_FC.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/f/f9/Everton_FC.svg'
   } else if (team === 'Stoke City' || team === 'stoke city' || team === 'Stoke City FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/a/a3/Stoke_City.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/a/a3/Stoke_City.svg'
   } else if (team === 'Crystal Palace' || team === 'crystal palace' || team === 'Crystal Palace FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/b/bf/Crystal_Palace_F.C._logo_(2013).png'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/b/bf/Crystal_Palace_F.C._logo_(2013).png'
   } else if (team === 'Huddersfield Town' || team === 'huddersfield' || team === 'Huddersfield') {
     logo = 'https://upload.wikimedia.org/wikipedia/en/5/5a/Huddersfield_Town_A.F.C._logo.svg'
   } else if (team === 'Burnley' || team === 'burnley' || team === 'Burnley FC') {
@@ -109,13 +109,13 @@ const assignLogo = (team) => {
   } else if (team === 'Manchester City' || team === 'manchester city' || team === 'Manchester City FC') {
     logo = 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg'
   } else if (team === 'Newcastle United' || team === 'newcastle united' || team === 'Newcastle United FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/5/56/Newcastle_United_Logo.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/5/56/Newcastle_United_Logo.svg'
   } else if (team === 'Tottenham' || team === 'tottenham' || team === 'Tottenham Hotspur FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/b/b4/Tottenham_Hotspur.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/b/b4/Tottenham_Hotspur.svg'
   } else if (team === 'Manchester United' || team === 'manchester united' || team === 'Manchester United FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg'
   } else if (team === 'West Ham' || team === 'west ham' || team === 'West Ham United FC') {
-    logo = 'http://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg'
+    logo = 'https://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg'
   } else {
     logo = 'https://seeklogo.com/images/P/premier-league-new-logo-D22A0CE87E-seeklogo.com.png'
   }

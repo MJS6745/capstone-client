@@ -7,9 +7,9 @@ const playerUi = require('../player/ui')
 const getStandingsSuccess = (data) => {
   // console.log('Get standings success invoked. Data is', data)
   // console.log('Standing data is', data.standing)
-  // for (let i = 0; i < data.standing.length; i++) {
-  //   data.standing[i].teamId = assignTeamId(data.standing[i].teamName)
-  // }
+  for (let i = 0; i < data.standing.length; i++) {
+    data.standing[i].crestURI = httpsLogo(data.standing[i]._links.team.href)
+  }
   const standingsHtml = standingsTemplate({ clubs: data.standing })
   // console.log('standingsHtml is', standingsHtml)
   $('#standingstable').append(standingsHtml)
@@ -18,6 +18,51 @@ const getStandingsSuccess = (data) => {
 const getStandingsFailure = (error) => {
   // console.log('Error getting standings. Error is', error)
   $('#standingstable').append('<tr><td>Standings unavailable. Please try again later</td></tr>')
+}
+
+const httpsLogo = (teamUrl) => {
+  // console.log('URL received for analysis is', teamUrl)
+  if (teamUrl.search('57') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg'
+  } else if (teamUrl.search('1044') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/4/41/Afc_bournemouth.svg'
+  } else if (teamUrl.search('397') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_&_Hove_Albion_logo.svg'
+  } else if (teamUrl.search('328') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/0/02/Burnley_FC_badge.png'
+  } else if (teamUrl.search('61') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/5/5c/Chelsea_crest.svg'
+  } else if (teamUrl.search('354') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/b/bf/Crystal_Palace_F.C._logo_(2013).png'
+  } else if (teamUrl.search('62') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/f/f9/Everton_FC.svg'
+  } else if (teamUrl.search('394') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/5/5a/Huddersfield_Town_A.F.C._logo.svg'
+  } else if (teamUrl.search('338') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png'
+  } else if (teamUrl.search('64') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg'
+  } else if (teamUrl.search('65') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg'
+  } else if (teamUrl.search('66') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg'
+  } else if (teamUrl.search('67') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/5/56/Newcastle_United_Logo.svg'
+  } else if (teamUrl.search('70') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/a/a3/Stoke_City.svg'
+  } else if (teamUrl.search('340') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/c/c9/FC_Southampton.svg'
+  } else if (teamUrl.search('72') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/a/ab/Swansea_City_Logo.svg'
+  } else if (teamUrl.search('73') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/b/b4/Tottenham_Hotspur.svg'
+  } else if (teamUrl.search('346') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/en/e/e2/Watford.svg'
+  } else if (teamUrl.search('74') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/8/8b/West_Bromwich_Albion.svg'
+  } else if (teamUrl.search('563') !== -1) {
+    return 'https://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg'
+  }
 }
 
 // const assignTeamId = (team) => {
