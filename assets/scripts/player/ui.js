@@ -77,6 +77,16 @@ const getPlayersSuccess = (data) => {
 
 const getStrategySuccess = (data) => {
   $('#keeper-list').empty()
+  $('#rightback-list').empty()
+  $('#centreback-list-a').empty()
+  $('#centreback-list-b').empty()
+  $('#leftback-list').empty()
+  $('#midfield-list-a').empty()
+  $('#midfield-list-b').empty()
+  $('#rightwing-list').empty()
+  $('#leftwing-list').empty()
+  $('#striker-list-a').empty()
+  $('#striker-list-b').empty()
   const keeperList = []
   const rightBackList = []
   const leftBackList = []
@@ -88,10 +98,41 @@ const getStrategySuccess = (data) => {
   for (let i = 0; i < data.players.length; i++) {
     if (data.players[i].position === 'Keeper') {
       keeperList.push(data.players[i])
+    } else if (data.players[i].position === 'Right Back' || data.players[i].position === 'Right-Back') {
+      rightBackList.push(data.players[i])
+    } else if (data.players[i].position === 'Centre-Back' || data.players[i].position === 'Center-Back' || data.players[i].position === 'Centre Back' || data.players[i].position === 'Center Back') {
+      centreBackList.push(data.players[i])
+    } else if (data.players[i].position === 'Left Back' || data.players[i].position === 'Left-Back') {
+      leftBackList.push(data.players[i])
+    } else if (data.players[i].position === 'Right Wing' || data.players[i].position === 'Right-Wing' || data.players[i].position === 'Right Midfield') {
+      rightWingList.push(data.players[i])
+    } else if (data.players[i].position === 'Central Midfield' || data.players[i].position === 'Defensive Midfield' || data.players[i].position === 'Attacking Midfield') {
+      midfieldList.push(data.players[i])
+    } else if (data.players[i].position === 'Left Wing' || data.players[i].position === 'Left-Wing' || data.players[i].position === 'Left Midfield') {
+      leftWingList.push(data.players[i])
+    } else if (data.players[i].position === 'Secondary Striker' || data.players[i].position === 'Centre-Forward' || data.players[i].position === 'Striker') {
+      strikerList.push(data.players[i])
     }
   }
   const keeperHtml = strategyTemplate({ players: keeperList })
   $('#keeper-list').append(keeperHtml)
+  const rightBackHtml = strategyTemplate({ players: rightBackList })
+  $('#rightback-list').append(rightBackHtml)
+  const leftBackHtml = strategyTemplate({ players: leftBackList })
+  $('#leftback-list').append(leftBackHtml)
+  const centreBackHtml = strategyTemplate({ players: centreBackList })
+  $('#centreback-list-a').append(centreBackHtml)
+  $('#centreback-list-b').append(centreBackHtml)
+  const rightWingHtml = strategyTemplate({ players: rightWingList })
+  $('#rightwing-list').append(rightWingHtml)
+  const leftWingHtml = strategyTemplate({ players: leftWingList })
+  $('#leftwing-list').append(leftWingHtml)
+  const midfieldHtml = strategyTemplate({ players: midfieldList })
+  $('#midfield-list-a').append(midfieldHtml)
+  $('#midfield-list-b').append(midfieldHtml)
+  const strikerHtml = strategyTemplate({ players: strikerList })
+  $('#striker-list-a').append(strikerHtml)
+  $('#striker-list-b').append(strikerHtml)
 }
 
 const assignLogo = (team) => {

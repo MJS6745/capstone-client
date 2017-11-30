@@ -20,7 +20,7 @@ const getStandings = () => {
 $(() => {
   setAPIOrigin(location, config)
   // Uncomment this before going live as it is needed to get the league standings info
-  // getStandings()
+  getStandings()
 })
 
 $(() => {
