@@ -76,6 +76,7 @@ const getPlayersSuccess = (data) => {
 }
 
 const getStrategySuccess = (data) => {
+  $('#keeper-list').empty()
   const keeperList = []
   const rightBackList = []
   const leftBackList = []

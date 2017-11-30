@@ -388,7 +388,8 @@
                 </div>
               </div>
               <!-- Modal for release player message end-->
-              <!-- Modal for team layout start -->
+
+              <!-- Modal for team strategy start -->
               <!-- Button start for team analysis -->
               <div class="playerinfobutton">
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#teamLayoutModal" id="teamLayoutButton">
@@ -402,6 +403,9 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h3 class="modal-title" id="teamLayoutMessageTitle">Strategize</h3>
+                      <br>
+                      <p>Try different combinations of your team players. If you do not have players at a certain position, the list will be blank. Also, please keep in mind that player positions must be named appropriately to have the players appear on their respective list.</p>
+                      <p>This information is not saved and is just meant to experiment with different potential roster setups.</p>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -414,7 +418,7 @@
                           </div>
                           <div class="col-xs-2">
                             <div class="form-group">
-                              <label for="keeper-list" class="strategy-container">Keepers:</label>
+                              <label for="keeper-list" class="strategy-container">Keeper:</label>
                               <select class="form-control" id="keeper-list">
                               </select>
                             </div>
@@ -488,10 +492,7 @@
                           </div>
                         </div>
                         <div class="row team-row">
-                          <div class="col-xs-2">
-                            <!-- None -->
-                          </div>
-                          <div class="col-xs-2">
+                          <div class="col-xs-3">
                             <div class="form-group">
                               <label for="keeper-list" class="strategy-container">Striker:</label>
                               <select class="form-control" id="striker-list">
@@ -501,8 +502,15 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-xs-2">
-                            <!-- None -->
+                          <div class="col-xs-3">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Striker:</label>
+                              <select class="form-control" id="striker-list">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -514,7 +522,8 @@
                 </div>
               </div>
               <!-- Field layout modal end -->
-              <!-- Modal for team layout end -->
+
+              <!-- Modal for team strategy end -->
              </div>
            </div>
       </div>
