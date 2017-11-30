@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>My Premier League</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    </head>
+    <body class="container-fluid">
+      <div class="jumbotron vertical-center" id="jumbo">
+          <img src="https://i.imgur.com/NKXyiUu.png" width="240" height="200">
+        <h1>My Premier League</h1>
+        <p>Build a squad of your favorite players, get info on different clubs, and view the current league standings</p>
+      </div>
+      <div class="row">
+        <!-- <div class="col-sm-8 panel panel-default pre-scrollable"> -->
+        <div class="col-sm-8">
+          <!-- <div class="panel-body container" id="playerlist"> -->
+          <div class="panel panel-default pre-scrollable panel-body" id="playerlist">
+            <!-- Start of container for playerlist -->
+            <p>Click "Get My Squad" to see a complete list of all your favorite players.</p>
+            <p>Note that a user must be logged in before they can access their list or sign players</p>
+            <!-- End of container for playerlist -->
+          </div>
+        </div>
+        <!-- <div class="col-sm-4 panel panel-default"> -->
+        <div class="col-sm-4">
+            <!-- <div class="panel-body"> -->
+            <div class="panel panel-default">
+              <!-- Modal for sign up start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#signUpModal" id="signUpButton">
+                Sign Up
+                </button>
+              </div>
+              <!-- End button -->
+              <!-- Modal for sign up start -->
+               <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h3 class="modal-title" id="exampleModalLabel">Sign Up</h3>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                       <form class="" id="signUpForm">
+                         <input type="text" name="credentials[email]" placeholder="Enter your email">
+                         <input type="password" name="credentials[password]" placeholder="Enter password">
+                         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+                         <button type="submit" class="btn btn-info">Sign Up</button>
+                       </form>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <!-- Modal for sign up end -->
+               <!--Modal for sign up success message-->
+               <div class="modal fade" id="signUpMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h3 class="modal-title" id="signUpMessage">All set! You signed up successfully and have been signed in</h3>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <!-- Modal for sign up success message end -->
+               <!-- Modal for sign in start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#signInModal" id="signInButton">
+                  Sign In
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="signInForm">
+                        <input type="text" name="credentials[email]" placeholder="Enter your email">
+                        <input type="password" name="credentials[password]" placeholder="Enter password">
+                        <button type="submit" class="btn btn-info">Sign In</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign in end -->
+
+              <!--Modal for sign in message-->
+              <div class="modal fade" id="signInMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="signInMessage">Sign in successful!</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign in success end -->
+
+              <!-- Modal for change pw start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="changePasswordButton" data-target="#changePasswordModal">
+                  Change Password
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Change Password</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="changePasswordForm">
+                        <input type="password" name="passwords[old]" placeholder="Old Password">
+                        <input type="password" name="passwords[new]" placeholder="New Password">
+                        <button type="submit" class="btn btn-info">Change Password</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for change pw end -->
+
+              <!--Modal for change pw message-->
+              <div class="modal fade" id="changePasswordMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="changePasswordMessage">All set! Your password has been updated</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for change pw message end -->
+
+              <!-- Modal for sign out start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="signOutButton" data-target="#signOutModal">
+                  Sign Out
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Sign Out</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="signOutForm">
+                        <h3>Are you sure you want to sign out?</h3>
+                        <button type="submit" class="btn btn-info">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign out end -->
+
+              <!--Modal for sign out message-->
+              <div class="modal fade" id="signOutMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="signOutMessage">You have been signed out successfully</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for sign out message end -->
+
+              <!-- Modal for add Player start -->
+              <!-- Button -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="addPlayerButton" data-target="#addPlayerModal">
+                  Sign Player
+                </button>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="addPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Add a Player</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="addPlayerForm">
+                        <div class="form-group">
+                          <label for="name-input">Name</label>
+                          <input class="form-control" type="text" name="player[name]" id="name-input" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="jersey-number-input">Jersey Number</label>
+                          <input class="form-control" type="number" min="0" max="99" name="player[jersey_number]" id="jersey-number-input" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="team-input">Club</label>
+                          <input class="form-control" type="text" name="player[team]" id="team-input" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="position-input">Position</label>
+                          <input class="form-control" type="text" name="player[position]" id="position-input" required>
+                        </div>
+                        <button type="submit" class="btn btn-info">Sign Player</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for player end -->
+              <!--Modal for sign player message start -->
+              <div class="modal fade" id="addPlayerMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="addPlayerMessage">Player successfully added</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="addPlayerMessageBody">Player has been successfully added to your list
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Modal for sign player message end -->
+              <!-- Modal for add Player end -->
+
+              <!-- Modal for get players start -->
+              <!-- Button start -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" id="getPlayersButton" data-target="#getPlayersModal">
+                  Get My Squad
+                </button>
+              </div>
+              <!-- Button end -->
+              <!-- Modal start -->
+              <div class="modal fade" id="getPlayersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Are you sure you want to view your players?</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="" id="getPlayersForm">
+                        <button type="submit" class="btn btn-info">Yes</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal End -->
+              <!-- Modal for get players message start -->
+              <div class="modal fade" id="getPlayersMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="getPlayersMessage">Oops! There was an error</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for get players message start -->
+              <!-- Modal for get players end -->
+
+              <!-- Modal for edit players message start -->
+              <div class="modal fade" id="editPlayersMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="editPlayersMessageTitle">Update successful!</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="editPlayersMessageBody">Your list of players will now be updated.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for edit players message end-->
+              <!-- Modal for release player message start -->
+              <div class="modal fade" id="deletePlayerMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="deletePlayerMessageTitle">Your player has been deleted.</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="editPlayersMessageBody">Your list of players will now be updated.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for release player message end-->
+
+              <!-- Modal for team strategy start -->
+              <!-- Button start for team analysis -->
+              <div class="playerinfobutton">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#teamLayoutModal" id="teamLayoutButton">
+                  Squad Strategy
+                </button>
+              </div>
+              <!-- Button end for team analysis -->
+              <!-- Field layout modal start -->
+              <div class="modal fade" id="teamLayoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="teamLayoutMessageTitle">Strategize</h3>
+                      <br>
+                      <p>Try different combinations of your team players. If you do not have players at a certain position, the list will be blank. Also, please keep in mind that player positions must be named appropriately to have the players appear on their respective list.</p>
+                      <p>This information is not saved and is just meant to experiment with different potential roster setups.</p>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="team-layout-body">
+                      <div class="container" class="strategy-container">
+                        <div class="row team-row">
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Keeper:</label>
+                              <select class="form-control" id="keeper-list">
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                        </div>
+                        <div class="row team-row">
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Center-Back:</label>
+                              <select class="form-control" id="centreback-list-a">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                        </div>
+                        <div class="row team-row">
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Right-Back:</label>
+                              <select class="form-control" id="rightback-list">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Center-Back:</label>
+                              <select class="form-control" id="centreback-list-b">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Left-Back:</label>
+                              <select class="form-control" id="leftback-list">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row team-row">
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Midfield:</label>
+                              <select class="form-control" id="midfield-list-a">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <!-- None -->
+                          </div>
+                        </div>
+                        <div class="row team-row">
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Right Wing:</label>
+                              <select class="form-control" id="rightwing-list">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Midfield:</label>
+                              <select class="form-control" id="midfield-list-b">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-2">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Left Wing:</label>
+                              <select class="form-control" id="leftwing-list">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row team-row">
+                          <div class="col-xs-3">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Striker:</label>
+                              <select class="form-control" id="striker-list-a">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xs-3">
+                            <div class="form-group">
+                              <label for="keeper-list" class="strategy-container">Striker:</label>
+                              <select class="form-control" id="striker-list-b">
+                                <option>Hey</option>
+                                <option>You</option>
+                                <option>Guys</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Field layout modal end -->
+
+              <!-- Modal for team strategy end -->
+             </div>
+           </div>
+      </div>
+      <!-- Find player and league standings functionality -->
+      <div class="row">
+        <!-- League standings area -->
+          <div class="col-sm-8">
+            <div class="panel panel-default" id="standings-box">
+              <h4>&nbsp;&nbsp;Premier League Standings</h4>
+              <div id="league-standings-body">
+                <table class="table" id="league-standings-table">
+                  <thead>
+                    <tr>
+                      <th>Club</th>
+                      <th>MP</th>
+                      <th>W</th>
+                      <th>D</th>
+                      <th>L</th>
+                      <th>GF</th>
+                      <th>GA</th>
+                      <th>GD</th>
+                      <th>Pts</th>
+                    </tr>
+                  </thead>
+                  <tbody id="standingstable">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- End league standings area -->
+          <!-- Player search area -->
+          <div class="col-sm-4 panel panel-default pre-scrollable" id="player-search-box">
+            <!-- <div class="panel panel-default" id="player-search-box"> -->
+            <div class="panel-body container">
+              <h4>Player Search</h4>
+              <form id="player-search-form">
+                <div class="form-group">
+                  <label for="team-select">Select a team</label>
+                  <select class="form-control" id="team-selection" name=team[id]>
+                    <option value="57">Arsenal</option>
+                    <option value="1044">Bournemouth</option>
+                    <option value="397">Brighton &amp; Hove Albion</option>
+                    <option value="328">Burnley</option>
+                    <option value="61">Chelsea</option>
+                    <option value="354">Crystal Palace</option>
+                    <option value="62">Everton</option>
+                    <option value="394">Huddersfield Town</option>
+                    <option value="338">Leicester City</option>
+                    <option value="64">Liverpool</option>
+                    <option value="65">Manchester City</option>
+                    <option value="66">Manchester United</option>
+                    <option value="67">Newcastle United</option>
+                    <option value="70">Stoke City</option>
+                    <option value="340">Southampton</option>
+                    <option value="72">Swansea City</option>
+                    <option value="73">Tottenham</option>
+                    <option value="346">Watford</option>
+                    <option value="74">West Brom</option>
+                    <option value="563">West Ham</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-info" id="searchPlayerButton">View Players</button>
+              </form>
+              <div class="panel-body container" id="search-results">
+                <!-- Area for search results -->
+                <p>Please log in to search for players</p>
+              </div>
+            </div>
+          </div>
+          <!-- End player search area -->
+        </div>
+      <!-- Sign up modal start -->
+       <!-- Sign up modal end -->
+    </body>
+</html>
