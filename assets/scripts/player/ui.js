@@ -5,6 +5,7 @@ const events = require('./events')
 // const showPlayersTemplate = require('../templates/players.handlebars')
 const showPlayersTemplate = require('../templates/playercard.handlebars')
 const singlePlayerTemplate = require('../templates/singleplayer.handlebars')
+const strategyTemplate = require('../templates/strategylist.handlebars')
 
 const addPlayerSuccess = (data) => {
   // console.log('Sign Player success invoked. Data is', data)
@@ -72,6 +73,24 @@ const getPlayersSuccess = (data) => {
   } else {
     $('#playerlist').append(showPlayersHtml)
   }
+}
+
+const getStrategySuccess = (data) => {
+  const keeperList = []
+  const rightBackList = []
+  const leftBackList = []
+  const centreBackList = []
+  const rightWingList = []
+  const midfieldList = []
+  const leftWingList = []
+  const strikerList = []
+  for (let i = 0; i < data.players.length; i++) {
+    if (data.players[i].position === 'Keeper') {
+      keeperList.push(data.players[i])
+    }
+  }
+  const keeperHtml = strategyTemplate({ players: keeperList })
+  $('#keeper-list').append(keeperHtml)
 }
 
 const assignLogo = (team) => {
@@ -171,5 +190,6 @@ module.exports = {
   updateListSuccess,
   addSearchPlayerSuccess,
   addSearchPlayerFailure,
-  assignLogo
+  assignLogo,
+  getStrategySuccess
 }

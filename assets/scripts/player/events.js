@@ -50,6 +50,13 @@ const getPlayers = (event) => {
     .catch(ui.getPlayersFailure)
 }
 
+const getStrategy = (event) => {
+  event.preventDefault()
+  api.getPlayers()
+    .then(ui.getStrategySuccess)
+    .catch(ui.getStrategyFailure)
+}
+
 const deletePlayer = (event) => {
   // console.log('Release player event invoked')
   event.preventDefault()
@@ -72,6 +79,7 @@ const addHandlers = () => {
   $('#getPlayersForm').on('submit', getPlayers)
   $('#playerlist').on('submit', '.editPlayerForm', editPlayer)
   $('#playerlist').on('submit', '.deletePlayerForm', deletePlayer)
+  $('#teamLayoutButton').on('click', getStrategy)
 }
 
 module.exports = {

@@ -29,6 +29,7 @@ $(() => {
   $('#addPlayerButton').hide()
   $('#getPlayersButton').hide()
   $('#searchPlayerButton').hide()
+  $('#teamLayoutButton').hide()
   authEvents.addHandlers()
   playerEvents.addHandlers()
   footdataEvents.addHandlers()
